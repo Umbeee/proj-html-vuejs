@@ -1,8 +1,13 @@
 <script>
-
+import CaroselloSubComp from './CaroselloSubComp.vue';
+import InfoProdotto from './InfoProdotto.vue';
 export default {
 
-    name: "MainComp"
+    name: "MainComp",
+    components: {
+        CaroselloSubComp,
+        InfoProdotto
+    }
 }
 
 </script>
@@ -12,10 +17,10 @@ export default {
     <main>
         <div class="container d-flex">
             <div class="sx">
-
+                <CaroselloSubComp />
             </div>
             <div class="dx">
-
+                <InfoProdotto />
             </div>
         </div>
     </main>
@@ -24,11 +29,11 @@ export default {
 
 <style lang="scss" scoped>
 main {
-    background-image: url('/img/sfondo.png');
+    background-color: rgb(238, 230, 214);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80vh;
+    height: 90vh;
 
     .container {
         justify-content: space-between;
@@ -36,14 +41,14 @@ main {
         height: 100%;
 
         .sx {
-            border: 1px dotted red;
             height: 500px;
-            aspect-ratio: 1;
+            width: 700px;
+            display: flex;
         }
 
         .dx {
             border: 1px dotted red;
-            width: 100px;
+            width: 300px;
             height: 500px;
         }
     }

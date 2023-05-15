@@ -25,6 +25,8 @@ export default {
 
 <style lang="scss" scoped>
 header {
+    // position: sticky;
+    // z-index: 99;
     height: 10vh;
     color: rgb(21, 79, 65);
     align-items: center;
@@ -43,6 +45,12 @@ header {
     .sx {
         justify-content: flex-end;
         width: calc(50% + 50px);
+    }
+
+    .btn:hover {
+        background-color: rgb(243, 235, 219);
+        text-decoration: underline;
+        transition: 0.2s;
     }
 }
 </style>
