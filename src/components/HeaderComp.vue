@@ -1,8 +1,22 @@
 <script>
-
+import { store } from '../store';
 export default {
 
-    name: "HeaderComp"
+    name: "HeaderComp",
+
+    data() {
+        return { store };
+    },
+    methods: {
+        trousers() {
+            store.currentItem = 1;
+            console.log(store.currentItem)
+        },
+        jumpers() {
+            store.currentItem = 0;
+            console.log(store.currentItem)
+        }
+    }
 }
 
 </script>
@@ -15,18 +29,17 @@ export default {
             <img src="/img/logo.png" alt="img" class="logo">
         </div>
         <div class="dx d-flex">
-            <button class="btn">trousers</button>
-            <button class="btn">jumpers</button>
+            <button class="btn" @click="trousers()">trousers</button>
+            <button class="btn" @click="jumpers()"> jumpers </button>
         </div>
 
     </header>
 </template>
 
 
-<style lang="scss" scoped>
+<style style lang="scss" scoped>
 header {
-    // position: sticky;
-    // z-index: 99;
+
     height: 10vh;
     color: rgb(21, 79, 65);
     align-items: center;

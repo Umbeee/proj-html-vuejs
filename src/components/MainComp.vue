@@ -47,9 +47,10 @@ main {
         }
 
         .dx {
-            border: 1px dotted red;
+            border: 2px dotted black;
             width: 300px;
             height: 500px;
+            padding: 20px;
         }
     }
 

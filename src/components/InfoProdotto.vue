@@ -13,9 +13,9 @@ export default {
 
 
 <template>
-    <h2>{{ store.JumperArray[0].name }}</h2>
-    <p>{{ store.JumperArray[0].text }}</p>
-    <p>{{ store.JumperArray[0].price }}</p>
+    <h2>{{ store.JumperArray[store.currentItem].name }}</h2>
+    <p>{{ store.JumperArray[store.currentItem].text }}</p>
+    <p>{{ store.JumperArray[store.currentItem].price }}</p>
 </template>
 
 

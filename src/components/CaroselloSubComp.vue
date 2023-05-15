@@ -12,20 +12,21 @@ export default {
             console.log('prev')
 
             store.currentImage--
-            console.log(store.currentImage)
             if (store.currentImage < 0) {
                 store.currentImage = store.JumperArray[0].images.length - 1
             }
-            console.log(store.currentImage)
         },
         next() {
             console.log('next')
 
             store.currentImage++
-
             if (store.currentImage > store.JumperArray[0].images.length - 1) {
                 store.currentImage = 0;
             }
+        },
+        variabileDiProva: 0,
+        activateFunct() {
+            store.currentImage = 1;
         }
     }
 }
@@ -38,10 +39,10 @@ export default {
         <img :src="store.JumperArray[0].images[store.currentImage]" alt="asd">
     </div>
     <div class="imgs-map">
-        <div class="prev" @click="prev()">p</div>
-        <div class="next" @click="next()">n</div>
+        <div class="prev" @click="prev()"><i class="fa-solid fa-caret-up"></i></div>
+        <div class="next" @click="next()"><i class="fa-solid fa-caret-up"></i></div>
         <div v-for="(elem, index) in store.JumperArray[0].images" :key="index" class="thumb"
-            :class="currentImage == index ? 'active' : ''">
+            :class="currentImage == index ? 'active' : ''" @click="activateFunct()">
             <img :src="elem" alt="asd" class="">
         </div>
     </div>
@@ -55,6 +56,7 @@ export default {
 
     img {
         height: 100%;
+        width: 100%;
     }
 }
 
@@ -66,6 +68,15 @@ export default {
     .prev,
     .next {
         position: absolute;
+        right: calc(50% + 12px);
+        font-size: 20px;
+        // padding: 7px;
+    }
+
+    .prev:hover,
+    .next:hover {
+        // background-color: rgb(238, 230, 214);
+        cursor: pointer;
     }
 
     .prev {
