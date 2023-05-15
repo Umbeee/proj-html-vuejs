@@ -23,10 +23,6 @@ export default {
             if (store.currentImage > store.JumperArray[0].images.length - 1) {
                 store.currentImage = 0;
             }
-        },
-        variabileDiProva: 0,
-        activateFunct() {
-            store.currentImage = 1;
         }
     }
 }
@@ -36,15 +32,12 @@ export default {
 
 <template>
     <div class="img-container">
-        <img :src="store.JumperArray[0].images[store.currentImage]" alt="asd">
+        <img :src="store.JumperArray[store.currentItem].images[store.currentImage]" alt="asd">
     </div>
     <div class="imgs-map">
         <div class="prev" @click="prev()"><i class="fa-solid fa-caret-up"></i></div>
-        <div class="next" @click="next()"><i class="fa-solid fa-caret-up"></i></div>
-        <div v-for="(elem, index) in store.JumperArray[0].images" :key="index" class="thumb"
-            :class="currentImage == index ? 'active' : ''" @click="activateFunct()">
-            <img :src="elem" alt="asd" class="">
-        </div>
+        <div class="next" @click="next()"><i class="fa-solid fa-caret-down"></i></div>
+        <div class="status"><span>{{ store.currentImage + 1 }} /5</span></div>
     </div>
 </template>
 
@@ -68,27 +61,33 @@ export default {
     .prev,
     .next {
         position: absolute;
-        right: calc(50% + 12px);
-        font-size: 20px;
-        // padding: 7px;
+        right: calc(80% + 12px);
+        font-size: 30px;
+    }
+
+    .status {
+        position: absolute;
+        right: 90%;
+        font-size: 30px;
     }
 
     .prev:hover,
     .next:hover {
-        // background-color: rgb(238, 230, 214);
+        color: rgb(142, 142, 142);
+        transition: 0.3s;
         cursor: pointer;
     }
 
     .prev {
-        top: 0;
+        top: 43%;
     }
 
     .next {
-        bottom: 0;
+        bottom: 43%;
     }
 
     .thumb {
-        height: calc(100% / 3);
+        height: calc(100% / 5);
 
         img {
             height: 100%;
