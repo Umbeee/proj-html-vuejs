@@ -17,6 +17,11 @@ export default {
             store.currentItem = 0;
             console.log(store.currentItem)
             store.currentImage = 2;
+        },
+        jacket() {
+            store.currentItem = 2;
+            store.currentImage = 0;
+
         }
     }
 }
@@ -31,8 +36,9 @@ export default {
                 <img src="/img/logo.png" alt="img" class="logo">
             </div>
             <div class="dx d-flex">
-                <button class="btn" @click="trousers()">trousers</button>
-                <button class="btn" @click="jumpers()"> jumpers </button>
+                <button class="btn fw-bold" @click="trousers()">trousers 002</button>
+                <button class="btn fw-bold" @click="jumpers()"> jumper 001</button>
+                <button class="btn fw-bold" @click="jacket()">jacket 003</button>
             </div>
         </div>
 
@@ -45,11 +51,14 @@ export default {
 header {
     position: sticky;
     top: 0;
+    z-index: 99;
     background-color: white;
-    height: 10vh;
+    height: 15vh;
     color: rgb(21, 79, 65);
+    border-bottom: 2mm ridge rgba(88, 88, 88, .6);
 
     .container {
+        height: 100%;
         align-items: center;
         justify-content: space-between;
 

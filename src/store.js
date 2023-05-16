@@ -3,6 +3,8 @@ import { reactive } from "vue";
 export const store = reactive({
     currentImage: 2,
     currentItem: 0,
+
+    //jumper arrayy che contiene informazioni sui path immagini, nome, descrizione e prezzo
     JumperArray: [
         {
             images: [
@@ -14,7 +16,8 @@ export const store = reactive({
             ],
             name: '001Jumper',
             text: '100% wool, black serigraphy. Made with love in Turin.',
-            price: '109$'
+            price: '109$',
+            detailImg: '/img/jumperdetail.png'
         },
         {
             images: [
@@ -26,7 +29,21 @@ export const store = reactive({
             ],
             name: '002SketchDenim',
             text: 'Off-White denim, black serigraphy. Made with love in Turin.',
-            price: '129$'
+            price: '129$',
+            detailImg: '/img/trousersdetail.jpg'
+        },
+        {
+            images: [
+                '/img/pngwing.com.png',
+                '/img/pngwing.com.png',
+                '/img/pngwing.com.png',
+                '/img/pngwing.com.png',
+                '/img/pngwing.com.png',
+            ],
+            name: '003Puffer',
+            text: 'Coming soon...',
+            price: '???$',
+            detailImg: '/img/pufferdetail.png'
         }
 
     ]
