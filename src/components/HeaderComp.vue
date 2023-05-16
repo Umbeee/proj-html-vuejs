@@ -63,7 +63,7 @@ header {
         justify-content: space-between;
 
         .logo {
-            height: 80px;
+            height: 120px;
             aspect-ratio: 1;
         }
 

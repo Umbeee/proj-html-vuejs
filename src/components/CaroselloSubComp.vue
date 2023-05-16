@@ -41,7 +41,7 @@ export default {
     <div class="imgs-map">
         <div v-for="(elem, index) in store.JumperArray[store.currentItem].images" :key="index" class="thumb"
             @click="activateFunct(index)">
-            <img :src="elem" alt="asd" class="">
+            <img :src="elem" alt="">
         </div>
         <!-- <div class="prev" @click="prev()"><i class="fa-solid fa-caret-up"></i></div>
         <div class="next" @click="next()"><i class="fa-solid fa-caret-down"></i></div> -->
@@ -54,7 +54,6 @@ export default {
 .img-container {
     height: 100%;
 
-
     img {
         height: 100%;
         width: 100%;
@@ -65,6 +64,9 @@ export default {
     width: 200px;
     height: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .thumb {
         height: calc(100% / 5);
