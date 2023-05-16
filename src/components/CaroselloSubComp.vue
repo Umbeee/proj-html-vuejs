@@ -45,7 +45,7 @@ export default {
 <style lang="scss" scoped>
 .img-container {
     height: 100%;
-    aspect-ratio: 1;
+
 
     img {
         height: 100%;
@@ -86,13 +86,5 @@ export default {
         bottom: 43%;
     }
 
-    .thumb {
-        height: calc(100% / 5);
-
-        img {
-            height: 100%;
-            aspect-ratio: 1;
-        }
-    }
 }
 </style>
