@@ -33,13 +33,7 @@ export const store = reactive({
             detailImg: '/img/trousersdetail.png'
         },
         {
-            images: [
-                '/img/pngwing.com.png',
-                '/img/pngwing.com.png',
-                '/img/pngwing.com.png',
-                '/img/pngwing.com.png',
-                '/img/pngwing.com.png',
-            ],
+            images: ['/img/pngwing.com.png'],
             name: '003Puffer',
             text: 'Coming soon...',
             price: '???$',

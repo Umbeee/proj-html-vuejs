@@ -8,21 +8,25 @@ export default {
         return { store };
     },
     methods: {
-        prev() {
-            console.log('prev')
+        // prev() {
+        //     console.log('prev')
 
-            store.currentImage--
-            if (store.currentImage < 0) {
-                store.currentImage = store.JumperArray[0].images.length - 1
-            }
-        },
-        next() {
-            console.log('next')
+        //     store.currentImage--
+        //     if (store.currentImage < 0) {
+        //         store.currentImage = store.JumperArray[0].images.length - 1
+        //     }
+        // },
+        // next() {
+        //     console.log('next')
 
-            store.currentImage++
-            if (store.currentImage > store.JumperArray[0].images.length - 1) {
-                store.currentImage = 0;
-            }
+        //     store.currentImage++
+        //     if (store.currentImage > store.JumperArray[0].images.length - 1) {
+        //         store.currentImage = 0;
+        //     }
+        // },
+        activateFunct(n) {
+            store.currentImage = n;
+            console.log(store.currentImage)
         }
     }
 }
@@ -35,9 +39,13 @@ export default {
         <img :src="store.JumperArray[store.currentItem].images[store.currentImage]" alt="asd">
     </div>
     <div class="imgs-map">
-        <div class="prev" @click="prev()"><i class="fa-solid fa-caret-up"></i></div>
-        <div class="next" @click="next()"><i class="fa-solid fa-caret-down"></i></div>
-        <div class="status"><span>{{ store.currentImage + 1 }} /5</span></div>
+        <div v-for="(elem, index) in store.JumperArray[store.currentItem].images" :key="index" class="thumb"
+            @click="activateFunct(index)">
+            <img :src="elem" alt="asd" class="">
+        </div>
+        <!-- <div class="prev" @click="prev()"><i class="fa-solid fa-caret-up"></i></div>
+        <div class="next" @click="next()"><i class="fa-solid fa-caret-down"></i></div> -->
+        <div class="status"><span>{{ store.currentImage + 1 }}/5</span></div>
     </div>
 </template>
 
@@ -58,6 +66,22 @@ export default {
     height: 100%;
     position: relative;
 
+    .thumb {
+        height: calc(100% / 5);
+        aspect-ratio: 1;
+        margin-left: 50px;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .thumb:hover {
+        cursor: pointer;
+        transition: 0.2s;
+        opacity: 0.80;
+    }
+
     .prev,
     .next {
         position: absolute;
@@ -67,7 +91,8 @@ export default {
 
     .status {
         position: absolute;
-        right: 90%;
+        right: -5%;
+        top: 5%;
         font-size: 30px;
     }
 
