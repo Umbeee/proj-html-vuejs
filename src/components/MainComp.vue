@@ -48,8 +48,8 @@ main {
         }
 
         .dx {
-            // border: thick double rgb(88, 88, 88);
-            border: 2mm ridge rgba(88, 88, 88, .6);
+            border: thick double rgb(88, 88, 88);
+            // border: 2mm ridge rgba(88, 88, 88, .6);
             width: 320px;
             height: 500px;
             padding: 20px;

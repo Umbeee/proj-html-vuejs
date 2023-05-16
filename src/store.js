@@ -30,7 +30,7 @@ export const store = reactive({
             name: '002SketchDenim',
             text: 'Off-White denim, black serigraphy. Made with love in Turin.',
             price: '129$',
-            detailImg: '/img/trousersdetail.jpg'
+            detailImg: '/img/trousersdetail.png'
         },
         {
             images: [
