@@ -36,8 +36,8 @@ export default {
                 <img src="/img/logo.png" alt="img" class="logo">
             </div>
             <div class="dx d-flex">
-                <button class="btn fw-bold" @click="trousers()">trousers 002</button>
                 <button class="btn fw-bold" @click="jumpers()"> jumper 001</button>
+                <button class="btn fw-bold" @click="trousers()">trousers 002</button>
                 <button class="btn fw-bold" @click="jacket()">jacket 003</button>
             </div>
         </div>
